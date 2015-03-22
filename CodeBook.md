@@ -102,8 +102,6 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 * BodyAccJerkMag
 * BodyGyroMag
 * BodyGyroJerkMag
- 
- 
 * BodyGyro
 
 
@@ -197,4 +195,4 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 * angle.Y.gravitymean
 * angle.Z.gravitymean
 * activity.name
-* 
+* subject
