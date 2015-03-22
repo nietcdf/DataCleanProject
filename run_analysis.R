@@ -7,21 +7,21 @@ dataFile1 <- "UCI\ HAR\ Dataset/train/X_train.txt"
 if (!file.exists(dataFile1) ){
         print("problem opening a data file train")
 }
-data1 <- read.table(dataFile1)#, stringsAsFactors=FALSE, header=FALSE)
+data1 <- read.table(dataFile1)
 
 
 activityFile1 <- "UCI\ HAR\ Dataset/train/y_train.txt"
 if (!file.exists(activityFile1) ){
         print("problem opening a data file train")
 }
-activity1 <- read.table(activityFile1)#, stringsAsFactors=FALSE, header=FALSE)
+activity1 <- read.table(activityFile1)
 
 
 subjectFile1 <- "UCI\ HAR\ Dataset/train/subject_train.txt"
 if (!file.exists(subjectFile1) ){
         print("problem opening a data file train")
 }
-subject1 <- read.table(subjectFile1)#, stringsAsFactors=FALSE, header=FALSE)
+subject1 <- read.table(subjectFile1)
 
 
 #################### test data ######################
@@ -29,21 +29,21 @@ dataFile2 <- "UCI\ HAR\ Dataset/test/X_test.txt"
 if (!file.exists(dataFile2) ){
         print("problem opening a data file test")
 }
-data2 <- read.table(dataFile2)#, stringsAsFactors=FALSE, header=FALSE)
+data2 <- read.table(dataFile2)
 
 
 activityFile2 <- "UCI\ HAR\ Dataset/test/y_test.txt"
 if (!file.exists(activityFile2) ){
         print("problem opening a data file test")
 }
-activity2 <- read.table(activityFile2)#, stringsAsFactors=FALSE, header=FALSE)
+activity2 <- read.table(activityFile2)
 
 
 subjectFile2 <- "UCI\ HAR\ Dataset/test/subject_test.txt"
 if (!file.exists(subjectFile2) ){
         print("problem opening a data file test")
 }
-subject2 <- read.table(subjectFile2)#, stringsAsFactors=FALSE, header=FALSE)
+subject2 <- read.table(subjectFile2)
 
 
 #################### field labels ##############
@@ -51,7 +51,7 @@ labelFileName <- "UCI\ HAR\ Dataset/features.txt"
 if (!file.exists(labelFileName) ){
         print("problem opening a label file")
 }
-label2 <- read.table(labelFileName)#, stringsAsFactors=FALSE, header=FALSE)
+label2 <- read.table(labelFileName)
 
 #################### activity labels ##############
 activityFileName <- "UCI\ HAR\ Dataset/activity_labels.txt"
