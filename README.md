@@ -98,27 +98,42 @@ mergedDataSet<-rbind(data1,data2)
 #### Step 2:  Extract only the measurements on the mean and standard deviation for each measurement.
 meanStdColumns<-grepl("mean", label2$V2) | grepl("std",label2$V2)
 
+#### Step 3: Uses descriptive activity names to name the activities in the data set
+##############attach labels to columns of data1 #
+names(data1)<-label2$V2
+names(data2)<-label2$V2
+
+data1$"activity.name" <- activity1$"activity.name"
+data2$"activity.name" <- activity2$"activity.name"
+
+mergedDataSet<-rbind(data1,data2)
+
+############## combined subjcet files
+subject <- rbind(subject1,subject2)
+names(subject)<-c("subject")
+mergedDataSet$subject <- subject$subject
+
 #### Step 4:  Uses descriptive activity names to name the activities in the data set
-#unify naming: replace , with -
+##############unify naming: replace , with -
 label2$V2<-gsub(",",".",label2$V2)
-#remove () from names
+##############remove () from names
 label2$V2<-gsub("[(]","",label2$V2)
 label2$V2<-gsub("[)]","",label2$V2)
-#separate angle from the rest of variable body
+##############separate angle from the rest of variable body
 label2$V2<-gsub("angle","angle.",label2$V2)
-#separate t from the rest of the variable body
+##############separate t from the rest of the variable body
 label2$V2<-gsub("^t","t.",label2$V2)
-#separate f from the rest of the variable body
+##############separate f from the rest of the variable body
 label2$V2<-gsub("^f","f.",label2$V2)
-#change Mean to mean, to make it more uniform
+##############change Mean to mean, to make it more uniform
 label2$V2<-gsub("Mean","mean",label2$V2)
-#change - to . , to make it easier to work with
+##############change - to . , to make it easier to work with
 label2$V2<-gsub("-",".",label2$V2)
 
 #### Step 5: Creates a tidy data set while calculationg mean for columns
 
-##### a list of calls to 
-#### t.BodyAcc.mean.Y ####
+############## a list of calls to 
+############## t.BodyAcc.mean.Y
 
 cdata <- ddply(dt, selFld, summarise, mean = mean(t.BodyAcc.mean.Y))
 numOfElem <- length(cdata[[1]]) 
@@ -126,7 +141,7 @@ cdata$parameter.name <- rep("t.BodyAcc.mean.Y",numOfElem)
 results <- rbind(results,cdata) 
 
 
-#### t.BodyAcc.mean.Z ####
+############## t.BodyAcc.mean.Z 
 
 cdata <- ddply(dt, selFld, summarise, mean = mean(t.BodyAcc.mean.Z))
 numOfElem <- length(cdata[[1]]) 
