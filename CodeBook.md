@@ -105,7 +105,7 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 
 
-### List of calculated variables
+### List of  variables for which mean was calculated
 
 * t.BodyAcc.mean.X
 * t.BodyAcc.mean.Y
@@ -193,5 +193,6 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 * angle.X.gravitymean
 * angle.Y.gravitymean
 * angle.Z.gravitymean
+### Aditional variables
 * activity.name
 * subject
