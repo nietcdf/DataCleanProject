@@ -36,4 +36,24 @@ R script is called run_analysis.R and does the following:
  4. Appropriately labels the data set with descriptive variable names. 
  5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+### R code highlights
+#### Step 1
+dataFile1 <- "UCI\ HAR\ Dataset/train/X_train.txt"
+if (!file.exists(dataFile1) ){
+        print("problem opening a data file train")
+}
+data1 <- read.table(dataFile1)
 
+
+activityFile1 <- "UCI\ HAR\ Dataset/train/y_train.txt"
+if (!file.exists(activityFile1) ){
+        print("problem opening a data file train")
+}
+activity1 <- read.table(activityFile1)
+
+
+subjectFile1 <- "UCI\ HAR\ Dataset/train/subject_train.txt"
+if (!file.exists(subjectFile1) ){
+        print("problem opening a data file train")
+}
+subject1 <- read.table(subjectFile1)
