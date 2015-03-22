@@ -6,7 +6,6 @@ Data comes from:
 ==================================================================
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0
-==================================================================
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
 DITEN - Università degli Studi di Genova.
@@ -102,13 +101,11 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 * BodyAccJerkMag
 * BodyGyroMag
 * BodyGyroJerkMag
- 
- 
 * BodyGyro
 
 
 
-### List of calculated variables
+### List of  variables for which mean was calculated
 
 * t.BodyAcc.mean.X
 * t.BodyAcc.mean.Y
@@ -196,5 +193,10 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 * angle.X.gravitymean
 * angle.Y.gravitymean
 * angle.Z.gravitymean
+
+
+### Aditional variables
+
+
 * activity.name
-* 
+* subject
