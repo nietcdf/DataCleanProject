@@ -37,7 +37,8 @@ R script is called run_analysis.R and does the following:
  5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ### R code highlights
-#### Step 1
+#### Step 1 - Read and merge data
+#################### train data ######################
 dataFile1 <- "UCI\ HAR\ Dataset/train/X_train.txt"
 if (!file.exists(dataFile1) ){
         print("problem opening a data file train")
@@ -57,3 +58,38 @@ if (!file.exists(subjectFile1) ){
         print("problem opening a data file train")
 }
 subject1 <- read.table(subjectFile1)
+#################### test data ######################
+dataFile2 <- "UCI\ HAR\ Dataset/test/X_test.txt"
+if (!file.exists(dataFile2) ){
+        print("problem opening a data file test")
+}
+data2 <- read.table(dataFile2)
+
+
+activityFile2 <- "UCI\ HAR\ Dataset/test/y_test.txt"
+if (!file.exists(activityFile2) ){
+        print("problem opening a data file test")
+}
+activity2 <- read.table(activityFile2)
+
+
+subjectFile2 <- "UCI\ HAR\ Dataset/test/subject_test.txt"
+if (!file.exists(subjectFile2) ){
+        print("problem opening a data file test")
+}
+subject2 <- read.table(subjectFile2)
+#################### field labels ##############
+labelFileName <- "UCI\ HAR\ Dataset/features.txt"
+if (!file.exists(labelFileName) ){
+        print("problem opening a label file")
+}
+label2 <- read.table(labelFileName)
+
+#################### activity labels ##############
+activityFileName <- "UCI\ HAR\ Dataset/activity_labels.txt"
+if (!file.exists(activityFileName) ){
+        print("problem opening a label file")
+}
+activityLabels <- read.table(activityFileName, stringsAsFactors=FALSE, header=FALSE)
+#### Step 2:  Extract only the measurements on the mean and standard deviation for each measurement.
+meanStdColumns<-grepl("mean", label2$V2) | grepl("std",label2$V2)
